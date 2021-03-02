@@ -1,3 +1,4 @@
+import 'package:filemanager/app/components/pie_chart.dart';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -14,16 +15,29 @@ class Storage extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          width: getProportionateScreenWidth(284),
-          height: getProportionateScreenHeight(152),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                  bottomLeft: Radius.circular(20))),
-          child: Text('oooo'),
-        ),
+            width: getProportionateScreenWidth(284),
+            height: getProportionateScreenHeight(152),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20))),
+            child: Container(
+              // color: Colors.red,
+              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              child: Row(
+                children: [
+                  Container(
+                    height: 150,
+                    width: 150,
+                    child: PieChartSample2(),
+                  ),
+                  Spacer(),
+                  TotalStorage()
+                ],
+              ),
+            )),
         Positioned(
           bottom: 0,
           right: 0,
@@ -61,6 +75,47 @@ class Storage extends StatelessWidget {
             ),
           ),
         )
+      ],
+    );
+  }
+}
+
+class TotalStorage extends StatelessWidget {
+  const TotalStorage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Free Storage",
+          style: TextStyle(
+              fontFamily: "SF Pro Display",
+              fontSize: 15,
+              color: Color(0xff383F4B).withOpacity(0.5),
+              fontWeight: FontWeight.w400),
+        ),
+        SizedBox(
+          height: getProportionateScreenWidth(10),
+        ),
+        Text("2.4 GB",
+            style: TextStyle(
+                fontFamily: "SF Pro Display",
+                fontSize: 28,
+                color: Color(0xff383F4B),
+                fontWeight: FontWeight.w600)),
+        SizedBox(
+          height: getProportionateScreenWidth(10),
+        ),
+        Text("of 12 GB",
+            style: TextStyle(
+                fontFamily: "SF Pro Display",
+                fontSize: 14,
+                color: Color(0xff383F4B).withOpacity(0.3),
+                fontWeight: FontWeight.w600))
       ],
     );
   }

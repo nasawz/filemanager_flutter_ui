@@ -90,7 +90,7 @@ class HomeView extends GetView<HomeController> {
                 child: Container(
                   height: 184,
                   width: double.infinity,
-                  decoration: BoxDecoration(color: Colors.red),
+                  // decoration: BoxDecoration(color: Colors.red),
                   padding: EdgeInsets.symmetric(
                       horizontal: kDefaultPadding,
                       vertical: kDefaultPadding / 2),
