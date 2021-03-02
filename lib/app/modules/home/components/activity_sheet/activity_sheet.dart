@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ActivitySheet extends StatelessWidget {
   const ActivitySheet({
@@ -27,12 +28,26 @@ class ActivitySheet extends StatelessWidget {
                     topRight: Radius.circular(kDefaultPadding / 2),
                   ),
                 ),
-                padding: EdgeInsets.all(kDefaultPadding),
+                padding: EdgeInsets.fromLTRB(kDefaultPadding,
+                    kDefaultPadding / 2, kDefaultPadding, kDefaultPadding),
                 // margin: EdgeInsets.symmetric(horizontal: 15.0),
                 child: SingleChildScrollView(
                   controller: myscrollController,
                   child: Column(
                     children: [
+                      Container(
+                        child: Center(
+                          child: // Adobe XD layer: 'Path Copy' (shape)
+                              SvgPicture.string(
+                            '<svg viewBox="174.0 9.0 26.6 1.0" ><path transform="translate(174.0, 8.5)" d="M -7.105427357601002e-15 0.5 L 26.55027198791504 0.5" fill="none" fill-opacity="0.3" stroke="#a9c4d4" stroke-width="4" stroke-opacity="0.3" stroke-miterlimit="10" stroke-linecap="round" /></svg>',
+                            allowDrawingOutsideViewBox: true,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: kDefaultPadding / 2,
+                      ),
                       Container(
                         height: 150.0,
                         color: Colors.deepOrangeAccent,
