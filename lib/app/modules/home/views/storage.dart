@@ -25,12 +25,15 @@ class Storage extends StatelessWidget {
                     bottomLeft: Radius.circular(20))),
             child: Container(
               // color: Colors.red,
-              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              // padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              padding: EdgeInsets.only(right: kDefaultPadding),
               child: Row(
                 children: [
                   Container(
+                    // color: Colors.green,
                     height: 150,
                     width: 150,
+                    // padding: EdgeInsets.symmetric(vertical: 10),
                     child: PieChartSample2(),
                   ),
                   Spacer(),
