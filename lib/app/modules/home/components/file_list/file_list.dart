@@ -27,6 +27,8 @@ class FileList extends StatelessWidget {
               )
             : ImageCard(
                 index: index,
+                height: 169,
+                path: 'assets/icons/work.jpg',
               ),
         staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
         mainAxisSpacing: kDefaultPadding * 0.6,
