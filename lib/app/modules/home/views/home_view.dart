@@ -1,10 +1,11 @@
-import 'package:filemanager/app/components/image_card/image_card.dart';
+import 'dart:ui';
+
+import 'package:filemanager/app/modules/home/components/activity_sheet/activity_sheet.dart';
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/modules/home/views/search_bar.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:get/get.dart';
 
@@ -90,59 +91,7 @@ class HomeView extends GetView<HomeController> {
               FileList()
             ],
           ),
-          SizedBox.expand(
-            child: DraggableScrollableSheet(
-              initialChildSize: 0.2,
-              maxChildSize: 0.8,
-              minChildSize: 0.1,
-              builder: (BuildContext context, myscrollController) {
-                return Container(
-                  decoration: BoxDecoration(color: Colors.red),
-                  margin: EdgeInsets.symmetric(horizontal: 15.0),
-                  child: SingleChildScrollView(
-                    controller: myscrollController,
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 150.0,
-                          color: Colors.deepOrangeAccent,
-                          child: Center(
-                            child: Text(
-                              'Container 1',
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 150.0,
-                          color: Colors.orangeAccent,
-                          child: Center(
-                            child: Text(
-                              'Container 2',
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 150.0,
-                          color: Colors.indigoAccent,
-                          child: Center(
-                            child: Text(
-                              'Container 3',
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
+          ActivitySheet(),
         ]),
       ),
     );
