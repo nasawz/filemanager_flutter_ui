@@ -1,6 +1,7 @@
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/modules/home/views/search_bar.dart';
 import 'package:filemanager/constant.dart';
+import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,8 +25,29 @@ class HomeView extends GetView<HomeController> {
                 Container(
                   height: 60,
                   width: double.infinity,
-                  decoration: BoxDecoration(color: Colors.red),
-                  child: Text('header'),
+                  padding: EdgeInsets.only(
+                      left: getProportionateScreenWidth(36),
+                      right: getProportionateScreenWidth(36)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Hi,Sara',
+                          style: TextStyle(
+                            fontFamily: 'SFProDisplay-Semibold',
+                            fontSize: kHeroFontSize,
+                            color: const Color(0xff383838),
+                          )),
+                      IconButton(
+                          onPressed: () {},
+                          icon: ClipOval(
+                            child: Image.asset(
+                              'assets/images/header_image.jpeg',
+                              width: getProportionateScreenWidth(40),
+                              height: getProportionateScreenWidth(40),
+                            ),
+                          ))
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: kDefaultPadding / 2,
