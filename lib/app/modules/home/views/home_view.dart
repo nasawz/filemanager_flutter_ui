@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:filemanager/app/modules/home/components/activity_sheet/activity_sheet.dart';
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/modules/home/views/search_bar.dart';
-import 'package:filemanager/app/components/float_button/float_button.dart';
 import 'package:filemanager/app/modules/home/views/storage.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
@@ -21,9 +20,6 @@ class HomeView extends GetView<HomeController> {
       //   title: Text('HomeView'),
       //   centerTitle: true,
       // ),
-      floatingActionButton: FloatButton(),
-      floatingActionButtonLocation: CustomFloatingActionButtonLocation(
-          FloatingActionButtonLocation.endFloat, 0, -90),
       body: Container(
         padding: EdgeInsets.only(top: Get.context.mediaQueryPadding.top),
         child: Stack(children: [
@@ -43,7 +39,6 @@ class HomeView extends GetView<HomeController> {
                           style: TextStyle(
                             fontFamily: 'SFProDisplay-Semibold',
                             fontSize: kHeroFontSize,
-                            fontWeight: FontWeight.w700,
                             color: const Color(0xff383838),
                           )),
                       IconButton(
@@ -90,7 +85,7 @@ class HomeView extends GetView<HomeController> {
                 child: Container(
                   height: 184,
                   width: double.infinity,
-                  // decoration: BoxDecoration(color: Colors.red),
+                  decoration: BoxDecoration(color: Colors.red),
                   padding: EdgeInsets.symmetric(
                       horizontal: kDefaultPadding,
                       vertical: kDefaultPadding / 2),
