@@ -7,7 +7,7 @@ import './dashed_line.dart';
 class ActivityItem extends StatelessWidget {
   Map data;
   int color;
-  ActivityItem(this.data, this.color);
+  ActivityItem(this.data, [this.color]);
 
   @override
   Widget build(BuildContext context) {

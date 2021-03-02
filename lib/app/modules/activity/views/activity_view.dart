@@ -132,7 +132,7 @@ class ActivityView extends GetView<ActivityController> {
                         ),
                         Column(
                           children: data
-                              .map((item) => ActivityItem(item, null))
+                              .map((item) => ActivityItem(item, 0xffF2E9E9))
                               .toList(),
                         ),
                       ],
