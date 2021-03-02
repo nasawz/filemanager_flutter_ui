@@ -1,8 +1,10 @@
+import 'package:filemanager/app/components/image_card/image_card.dart';
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/modules/home/views/search_bar.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:get/get.dart';
 
@@ -85,14 +87,7 @@ class HomeView extends GetView<HomeController> {
                   child: Text('storage'),
                 ),
               ),
-              SliverToBoxAdapter(
-                child: Container(
-                  width: double.infinity,
-                  height: 1000,
-                  decoration: BoxDecoration(color: Colors.red[50]),
-                  child: FileList(),
-                ),
-              ),
+              FileList()
             ],
           ),
           SizedBox.expand(
