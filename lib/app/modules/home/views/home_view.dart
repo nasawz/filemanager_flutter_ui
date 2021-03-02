@@ -19,10 +19,10 @@ class HomeView extends GetView<HomeController> {
       body: Container(
         padding: EdgeInsets.only(top: Get.context.mediaQueryPadding.top),
         child: Stack(children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
+          CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(
+                child: Container(
                   height: 60,
                   width: double.infinity,
                   padding: EdgeInsets.only(
@@ -49,27 +49,40 @@ class HomeView extends GetView<HomeController> {
                     ],
                   ),
                 ),
-                SizedBox(
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
                   height: kDefaultPadding / 2,
                 ),
-                SearchBar(),
-                SizedBox(
+              ),
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                  child: SearchBar(),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
                   height: kDefaultPadding / 2,
                 ),
-                Container(
+              ),
+              SliverToBoxAdapter(
+                child: Container(
                   height: 184,
                   width: double.infinity,
                   decoration: BoxDecoration(color: Colors.red),
                   child: Text('storage'),
                 ),
-                Container(
+              ),
+              SliverToBoxAdapter(
+                child: Container(
                   width: double.infinity,
                   height: 1000,
                   decoration: BoxDecoration(color: Colors.red[50]),
                   child: FileList(),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           SizedBox.expand(
             child: DraggableScrollableSheet(
