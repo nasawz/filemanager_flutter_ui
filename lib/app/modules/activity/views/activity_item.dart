@@ -6,7 +6,8 @@ import './dashed_line.dart';
 // ignore: must_be_immutable
 class ActivityItem extends StatelessWidget {
   Map data;
-  ActivityItem(this.data);
+  int color;
+  ActivityItem(this.data, this.color);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class ActivityItem extends StatelessWidget {
                   width: 271,
                   height: 71,
                   decoration: BoxDecoration(
-                    color: kBackgroundColor,
+                    color: color != null ? Color(color) : kBackgroundColor,
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
                     ),
