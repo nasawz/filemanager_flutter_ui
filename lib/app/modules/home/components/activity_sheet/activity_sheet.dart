@@ -17,7 +17,11 @@ class ActivitySheet extends StatelessWidget {
         maxChildSize: 1,
         minChildSize: 0.1,
         builder: (BuildContext context, myscrollController) {
-          return ClipRect(
+          return ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(kDefaultPadding / 2),
+              topRight: Radius.circular(kDefaultPadding / 2),
+            ),
             child: BackdropFilter(
               filter: new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
               child: Container(
