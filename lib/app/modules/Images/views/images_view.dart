@@ -65,8 +65,7 @@ class Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return // Adobe XD layer: 'Images' (text)
-        Text(
+    return Text(
       'Images ',
       style: TextStyle(
         fontFamily: 'SFProText-Semibold',
