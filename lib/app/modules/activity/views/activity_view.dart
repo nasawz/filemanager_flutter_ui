@@ -41,7 +41,7 @@ class ActivityView extends GetView<ActivityController> {
                       Container(
                         height: 50,
                         width: 100,
-                        color: Colors.red,
+                        color: Colors.green,
                       ),
                       Container(
                         height: 100,
