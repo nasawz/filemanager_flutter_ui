@@ -1,6 +1,8 @@
+import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../util.dart';
+import 'dart:math' as math;
 
 class Storage extends StatelessWidget {
   const Storage({
@@ -34,15 +36,28 @@ class Storage extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(5),
                     bottomRight: Radius.circular(5))),
-            child: Text(
-              'Storage',
-              // maxLines: 1,
-              // overflow: TextOverflow.values,
-              style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontFamily: "SF Pro Display"),
+            child: Transform.translate(
+              offset: Offset(getProportionateScreenWidth(48), 0),
+              child: Transform.rotate(
+                angle: -90.0 * math.pi / 180,
+                child: OverflowBox(
+                  alignment: Alignment.center,
+                  maxWidth: getProportionateScreenWidth((48 + 20).toDouble()),
+                  maxHeight: getProportionateScreenHeight(108),
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: kDefaultPadding / 4),
+                    child: Text(
+                      'Storage',
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "SF Pro Display"),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         )
