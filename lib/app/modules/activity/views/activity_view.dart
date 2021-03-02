@@ -40,13 +40,23 @@ class ActivityView extends GetView<ActivityController> {
                   child: Column(
                     children: <Widget>[
                       Container(
-                        height: 50,
-                        width: 100,
-                        color: Colors.green,
+                        height: 60,
+                        alignment: Alignment.center,
+                        child: Container(
+                          width: 40,
+                          height: 5,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                          ),
+                        ),
                       ),
                       Container(
-                        height: 100,
+                        height: 40,
                         width: 240,
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Last Activity',
