@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './dashed_line.dart';
+
 class ActivityItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,12 +15,27 @@ class ActivityItem extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    child: Text('原点'),
+                    width: 22.0,
+                    height: 22.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xff383838),
+                      borderRadius: BorderRadius.circular(22),
+                    ),
                   ),
                   Container(
-                    child: Text('虚线'),
+                    width: 22.0,
+                    height: 148.0,
+                    child: CYDashedLine(
+                      axis: Axis.vertical,
+                      height: 8,
+                      count: 10,
+                      color: Color(0xffD8D8D8),
+                    ),
                   ),
                 ],
+              ),
+              Container(
+                width: 20.0,
               ),
               Column(
                 children: [
