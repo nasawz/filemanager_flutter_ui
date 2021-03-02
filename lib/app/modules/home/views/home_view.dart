@@ -1,3 +1,4 @@
+import 'package:filemanager/app/modules/home/views/search_bar.dart';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -28,12 +29,7 @@ class HomeView extends GetView<HomeController> {
                 SizedBox(
                   height: kDefaultPadding / 2,
                 ),
-                Container(
-                  height: 50,
-                  decoration: BoxDecoration(color: Colors.red),
-                  width: double.infinity,
-                  child: Text('search bar'),
-                ),
+                SearchBar(),
                 SizedBox(
                   height: kDefaultPadding / 2,
                 ),
