@@ -7,6 +7,15 @@ import 'package:get/get.dart';
 import '../controllers/activity_controller.dart';
 import './activity_item.dart';
 
+final data = [
+  {'status': 1, 'time': 'Few seconds ago'},
+  {'status': 1, 'time': '20 minutes ago'},
+  {'status': 0, 'time': '2 hours ago'},
+  {'status': 0, 'time': '4 hours ago'},
+  {'status': 0, 'time': '6 hours ago'},
+  {'status': 0, 'time': '8 hours ago'}
+];
+
 class ActivityView extends GetView<ActivityController> {
   @override
   Widget build(BuildContext context) {
@@ -68,10 +77,12 @@ class ActivityView extends GetView<ActivityController> {
                           textAlign: TextAlign.left,
                         ),
                       ),
-                      Container(
-                        height: 650,
-                        width: double.infinity,
-                        child: ActivityItem(),
+                      SingleChildScrollView(
+                        padding: EdgeInsets.all(30.0),
+                        child: Column(
+                          children:
+                              data.map((item) => ActivityItem(item)).toList(),
+                        ),
                       ),
                     ],
                   ),
