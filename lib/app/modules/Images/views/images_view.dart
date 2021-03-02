@@ -1,4 +1,4 @@
-import 'package:filemanager/app/modules/Images/components/image_card/image_card.dart';
+import 'package:filemanager/app/components/image_card/image_card.dart';
 import 'package:filemanager/app/modules/Images/components/top_tool_bar/top_tool_bar.dart';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';

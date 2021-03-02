@@ -1,16 +1,12 @@
 # filemanager
 
-A new Flutter project.
+![iOS](https://img.shields.io/badge/iOS-13%20-blue)
+[![GitHub](https://img.shields.io/github/stars/nasawz/filemanager_flutter_ui?style=social)](https://img.shields.io/github/stars/nasawz/filemanager_flutter_ui?style=social)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+这是一个Flutter编写UI的练习，使用了 [Getx](https://github.com/jonataslaw/getx/blob/master/README.zh-cn.md) 做项目的脚手架。
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+**UI取自**：https://www.uplabs.com/posts/file-manager-app-exploration-f75a043e-3efc-407c-a52b-de31d759ab66
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![0ce47234185861 60208d50901b1](https://user-images.githubusercontent.com/372910/109605671-7da56400-7b60-11eb-95d6-72058fe3cf59.png)
