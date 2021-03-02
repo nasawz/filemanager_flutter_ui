@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:filemanager/app/modules/home/components/activity_sheet/activity_sheet.dart';
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/modules/home/views/search_bar.dart';
+import 'package:filemanager/app/modules/home/views/float_button.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,9 @@ class HomeView extends GetView<HomeController> {
       //   title: Text('HomeView'),
       //   centerTitle: true,
       // ),
+      floatingActionButton: FloatButton(),
+      floatingActionButtonLocation: CustomFloatingActionButtonLocation(
+          FloatingActionButtonLocation.endFloat, 0, -90),
       body: Container(
         padding: EdgeInsets.only(top: Get.context.mediaQueryPadding.top),
         child: Stack(children: [
