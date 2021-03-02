@@ -1,3 +1,4 @@
+import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/modules/home/views/search_bar.dart';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class HomeView extends GetView<HomeController> {
                   width: double.infinity,
                   height: 1000,
                   decoration: BoxDecoration(color: Colors.red[50]),
-                  child: Text('files'),
+                  child: FileList(),
                 ),
               ],
             ),
