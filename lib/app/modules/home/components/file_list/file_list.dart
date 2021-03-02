@@ -10,30 +10,27 @@ class FileList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
+    return StaggeredGridView.countBuilder(
       padding: EdgeInsets.all(kDefaultPadding),
-      sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: 4,
-        itemCount: 18,
-        itemBuilder: (BuildContext context, int index) => index == 0
-            ? Text(
-                'Your Files',
-                style: TextStyle(
-                  fontFamily: 'SFProText-Semibold',
-                  fontSize: 20,
-                  color: const Color(0xff383f4b),
-                ),
-                textAlign: TextAlign.left,
-              )
-            : ImageCard(
-                index: index,
-                height: 169,
-                path: 'assets/icons/work.jpg',
+      crossAxisCount: 4,
+      itemCount: 18,
+      itemBuilder: (BuildContext context, int index) => index == 0
+          ? // Adobe XD layer: 'Your Files' (text)
+          Text(
+              'Your Files',
+              style: TextStyle(
+                fontFamily: 'SFProText-Semibold',
+                fontSize: 20,
+                color: const Color(0xff383f4b),
               ),
-        staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
-        mainAxisSpacing: kDefaultPadding * 0.6,
-        crossAxisSpacing: kDefaultPadding * 0.6,
-      ),
+              textAlign: TextAlign.left,
+            )
+          : ImageCard(
+              index: index,
+            ),
+      staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
+      mainAxisSpacing: kDefaultPadding * 0.6,
+      crossAxisSpacing: kDefaultPadding * 0.6,
     );
   }
 }
