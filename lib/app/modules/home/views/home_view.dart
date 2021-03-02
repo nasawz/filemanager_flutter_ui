@@ -26,8 +26,8 @@ class HomeView extends GetView<HomeController> {
                   height: 60,
                   width: double.infinity,
                   padding: EdgeInsets.only(
-                      left: getProportionateScreenWidth(36),
-                      right: getProportionateScreenWidth(36)),
+                      left: getProportionateScreenWidth(kDefaultPadding),
+                      right: getProportionateScreenWidth(kDefaultPadding)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -39,11 +39,22 @@ class HomeView extends GetView<HomeController> {
                           )),
                       IconButton(
                           onPressed: () {},
-                          icon: ClipOval(
-                            child: Image.asset(
-                              'assets/images/header_image.jpeg',
-                              width: getProportionateScreenWidth(40),
-                              height: getProportionateScreenWidth(40),
+                          icon: Container(
+                            width: getProportionateScreenWidth(45),
+                            height: getProportionateScreenWidth(45),
+                            decoration: BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                color: const Color(0xffadc8f6),
+                                offset: Offset(0, 4),
+                                blurRadius: 20,
+                              )
+                            ]),
+                            child: ClipOval(
+                              child: Image.asset(
+                                'assets/images/header_image.jpeg',
+                                width: getProportionateScreenWidth(40),
+                                height: getProportionateScreenWidth(40),
+                              ),
                             ),
                           ))
                     ],
