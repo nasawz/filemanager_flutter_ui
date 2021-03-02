@@ -22,8 +22,50 @@ class ActivityView extends GetView<ActivityController> {
           Expanded(
             child: Container(
               width: double.infinity,
-              decoration: BoxDecoration(color: kSecondaryColor),
-              child: Text('ActivityView'),
+              decoration: BoxDecoration(color: kBackgroundColor),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: kBackgroundColor,
+                ),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: kSecondaryColor,
+                    borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(50.0),
+                      topRight: const Radius.circular(50.0),
+                    ),
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: 50,
+                        width: 100,
+                        color: Colors.red,
+                      ),
+                      Container(
+                        height: 100,
+                        width: 240,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Last Activity',
+                          style: TextStyle(
+                            fontFamily: 'SFProDisplay-Semibold',
+                            fontSize: 30,
+                            // color: const Color(0xff383838),
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
+                      Container(
+                        height: 650,
+                        width: 100,
+                        color: Colors.blue,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
         ],
