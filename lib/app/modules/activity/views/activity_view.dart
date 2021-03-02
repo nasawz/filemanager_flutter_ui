@@ -131,8 +131,9 @@ class ActivityView extends GetView<ActivityController> {
                           ),
                         ),
                         Column(
-                          children:
-                              data.map((item) => ActivityItem(item)).toList(),
+                          children: data
+                              .map((item) => ActivityItem(item, null))
+                              .toList(),
                         ),
                       ],
                     ),
