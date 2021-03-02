@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../controllers/activity_controller.dart';
+import './activity_item.dart';
 
 class ActivityView extends GetView<ActivityController> {
   @override
@@ -59,8 +60,8 @@ class ActivityView extends GetView<ActivityController> {
                       ),
                       Container(
                         height: 650,
-                        width: 100,
-                        color: Colors.blue,
+                        width: double.infinity,
+                        child: ActivityItem(),
                       ),
                     ],
                   ),
