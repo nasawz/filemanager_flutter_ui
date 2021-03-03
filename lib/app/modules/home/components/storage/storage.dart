@@ -9,7 +9,11 @@ class Storage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    // return Stack(
+    //   children: [LeftCard(), RightCard()],
+    // );
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [LeftCard(), RightCard()],
     );
   }
