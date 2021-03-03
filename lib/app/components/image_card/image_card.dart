@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ImageCard extends StatelessWidget {
   final index;
   final double height;
   final String path;
+  final String route;
   const ImageCard({
     Key key,
     this.index,
     this.height,
     this.path,
+    this.route,
   }) : super(key: key);
 
   @override
@@ -29,14 +32,19 @@ class ImageCard extends StatelessWidget {
         width: 145.0,
         child: Column(
           children: [
-            Container(
-                height: 109.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(14.0),
-                        topRight: Radius.circular(14.0)),
-                    image: DecorationImage(
-                        image: AssetImage(path), fit: BoxFit.cover))),
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(route);
+              },
+              child: Container(
+                  height: 109.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(14.0),
+                          topRight: Radius.circular(14.0)),
+                      image: DecorationImage(
+                          image: AssetImage(path), fit: BoxFit.cover))),
+            ),
             Expanded(
               child: Container(
                 padding: EdgeInsets.only(top: 10.0, left: 15.0, right: 15.0),

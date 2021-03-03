@@ -2,8 +2,10 @@ import 'package:filemanager/app/components/image_card/image_card.dart';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:filemanager/app/routes/app_pages.dart';
 
 class FileList extends StatelessWidget {
+  static const Route = Routes.IMAGES;
   const FileList({
     Key key,
   }) : super(key: key);
@@ -29,7 +31,7 @@ class FileList extends StatelessWidget {
                 index: index,
                 height: 169,
                 path: 'assets/icons/work.jpg',
-              ),
+                route: Route),
         staggeredTileBuilder: (int index) => new StaggeredTile.fit(2),
         mainAxisSpacing: kDefaultPadding * 0.6,
         crossAxisSpacing: kDefaultPadding * 0.6,

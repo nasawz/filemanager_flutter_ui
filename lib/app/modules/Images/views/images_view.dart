@@ -40,6 +40,8 @@ class ImagesView extends GetView<ImagesController> {
                                 ? Title()
                                 : ImageCard(
                                     index: index,
+                                    height: 169,
+                                    path: 'assets/icons/work.jpg',
                                   ),
                         staggeredTileBuilder: (int index) =>
                             new StaggeredTile.fit(2),
