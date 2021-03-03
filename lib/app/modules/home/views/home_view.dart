@@ -8,14 +8,13 @@ import 'package:filemanager/app/modules/home/components/storage/storage.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_group_sliver/flutter_group_sliver.dart';
 import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
-import 'package:statusbar/statusbar.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    StatusBar.color(kBackgroundColor);
     return Scaffold(
       // appBar: AppBar(
       //   title: Text('HomeView'),
@@ -97,38 +96,32 @@ class HomeView extends GetView<HomeController> {
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  height: 200,
-                  width: double.infinity,
-                  // decoration: BoxDecoration(color: Colors.red),
-                  padding: EdgeInsets.only(
-                      left: kDefaultPadding,
-                      right: kDefaultPadding,
-                      top: kDefaultPadding / 2,
-                      bottom: kDefaultPadding / 2 + 16),
-                  // padding: EdgeInsets.symmetric(
-                  //     horizontal: kDefaultPadding,
-                  //     vertical: kDefaultPadding / 2),
-                  decoration: BoxDecoration(
-                      color: kBackgroundColor,
-                      borderRadius:
-                          BorderRadius.only(bottomLeft: Radius.circular(50))),
-                  child: Storage(),
-                ),
-              ),
-              SliverToBoxAdapter(
-                child: Container(
-                  height: kDefaultPadding * 1.5,
-                  // color: Colors.green,
-                  color: kBackgroundColor,
+                  color: kSecondaryColor,
                   child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    // decoration: BoxDecoration(color: Colors.red),
+                    padding: EdgeInsets.only(
+                        left: kDefaultPadding,
+                        right: kDefaultPadding,
+                        top: kDefaultPadding / 2,
+                        bottom: kDefaultPadding / 2 + 16),
                     decoration: BoxDecoration(
-                        color: kSecondaryColor,
+                        // color: Colors.green,
+                        color: kBackgroundColor,
                         borderRadius:
-                            BorderRadius.only(topRight: Radius.circular(50))),
+                            BorderRadius.only(bottomLeft: Radius.circular(50))),
+                    child: Storage(),
                   ),
                 ),
               ),
-              FileList()
+              SliverGroupBuilder(
+                decoration: BoxDecoration(
+                    color: kSecondaryColor,
+                    borderRadius:
+                        BorderRadius.only(topRight: Radius.circular(40))),
+                child: FileList(),
+              ),
             ],
           ),
           ActivitySheet(),

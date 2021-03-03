@@ -12,6 +12,7 @@ class FileList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverPadding(
       padding: EdgeInsets.only(
+          top: kDefaultPadding * 1.8,
           left: kDefaultPadding,
           right: kDefaultPadding,
           bottom: kDefaultPadding),

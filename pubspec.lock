@@ -83,6 +83,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_group_sliver:
+    dependency: "direct main"
+    description:
+      name: flutter_group_sliver
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.2"
   flutter_staggered_grid_view:
     dependency: "direct main"
     description:
@@ -177,13 +184,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.10.0-nullsafety.1"
-  statusbar:
-    dependency: "direct main"
-    description:
-      name: statusbar
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "1.1.0"
   stream_channel:
     dependency: transitive
     description:
