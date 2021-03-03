@@ -5,12 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../controllers/activity_controller.dart';
-import './activity_item.dart';
+import 'package:filemanager/app/modules/activity/components/activity_item/activity_item.dart';
+import 'package:filemanager/util.dart';
 
 final data = [
   {
     'status': 1,
-    'time': 'Few seconds ago',
+    'time': '2021-03-03 15:34:30',
     'bitmaps': [
       'assets/images/Bitmap1.png',
       'assets/images/Bitmap2.png',
@@ -20,7 +21,7 @@ final data = [
   },
   {
     'status': 1,
-    'time': '20 minutes ago',
+    'time': '2021-03-03 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap1.png',
       'assets/images/Bitmap2.png',
@@ -30,7 +31,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '2 hours ago',
+    'time': '2021-02-27 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap1.png',
       'assets/images/Bitmap2.png',
@@ -43,7 +44,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '4 hours ago',
+    'time': '2021-01-30 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap4.png',
       'assets/images/Bitmap2.png',
@@ -53,7 +54,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '6 hours ago',
+    'time': '2020-04-30 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap2.png',
       'assets/images/Bitmap5.png',
@@ -63,7 +64,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '8 hours ago',
+    'time': '2019-04-30 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap5.png',
       'assets/images/Bitmap6.png',
@@ -108,11 +109,11 @@ class ActivityView extends GetView<ActivityController> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          height: 60,
+                          height: getProportionateScreenWidth(60),
                           alignment: Alignment.center,
                           child: Container(
-                            width: 40,
-                            height: 5,
+                            width: getProportionateScreenWidth(40),
+                            height: getProportionateScreenWidth(5),
                             decoration: BoxDecoration(
                               color: Colors.grey[200],
                               borderRadius: BorderRadius.all(
@@ -122,9 +123,10 @@ class ActivityView extends GetView<ActivityController> {
                           ),
                         ),
                         Container(
-                          height: 40,
-                          width: 240,
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
+                          height: getProportionateScreenWidth(40),
+                          width: getProportionateScreenWidth(240),
+                          margin: EdgeInsets.fromLTRB(
+                              0, 0, 0, getProportionateScreenWidth(40)),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Last Activity',
@@ -137,9 +139,8 @@ class ActivityView extends GetView<ActivityController> {
                           ),
                         ),
                         Column(
-                          children: data
-                              .map((item) => ActivityItem(item, 0xffF2E9E9))
-                              .toList(),
+                          children:
+                              data.map((item) => ActivityItem(item)).toList(),
                         ),
                       ],
                     ),

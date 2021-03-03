@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:filemanager/constant.dart';
+import 'package:filemanager/util.dart';
+import 'package:day/day.dart';
 
-import './dashed_line.dart';
+import 'package:filemanager/app/components/dashed_line/dashed_line.dart';
 
 // ignore: must_be_immutable
 class ActivityItem extends StatelessWidget {
   Map data;
+  Map diffTime = {};
   List bitmaps;
   int length;
   int color;
@@ -13,6 +16,27 @@ class ActivityItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get diff
+    final now = Day();
+    final createTime = Day.fromString(data['time']);
+    diffTime["year"] = now.diff(createTime, 'y');
+    diffTime["month"] = now.diff(createTime, 'M');
+    diffTime["day"] = now.diff(createTime, 'd');
+    diffTime["hour"] = now.diff(createTime, 'h');
+    diffTime["minute"] = now.diff(createTime, 'm');
+    diffTime["second"] = now.diff(createTime, 's');
+    String diffText = diffTime["year"] != 0
+        ? "${diffTime["year"].toString()} year ago"
+        : diffTime["month"] != 0
+            ? "${diffTime["month"].toString()} month ago"
+            : diffTime["day"] != 0
+                ? "${diffTime["day"].toString()} day ago"
+                : diffTime["hour"] != 0
+                    ? "${diffTime["hour"].toString()} hour ago"
+                    : diffTime["minute"] != 0
+                        ? "${diffTime["minute"].toString()} minute ago"
+                        : "Few second ago";
+
     length = data['bitmaps'].length;
     bitmaps = data['bitmaps'].map((element) => element).toList();
     if (data['bitmaps'].length > 4) {
@@ -20,15 +44,15 @@ class ActivityItem extends StatelessWidget {
       bitmaps.add('assets/images/header_image.jpeg');
     }
     return Container(
-      width: 314.0,
-      height: 170.0,
+      width: getProportionateScreenWidth(314.0),
+      height: getProportionateScreenWidth(170.0),
       child: Row(
         children: [
           Column(
             children: [
               Container(
-                width: 22.0,
-                height: 22.0,
+                width: getProportionateScreenWidth(22.0),
+                height: getProportionateScreenWidth(22.0),
                 decoration: BoxDecoration(
                   color: data['status'] == 1
                       ? Color(0xff383838)
@@ -37,8 +61,8 @@ class ActivityItem extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 22.0,
-                height: 148.0,
+                width: getProportionateScreenWidth(22.0),
+                height: getProportionateScreenWidth(148.0),
                 child: CYDashedLine(
                   axis: Axis.vertical,
                   height: 8,
@@ -48,16 +72,16 @@ class ActivityItem extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            width: 20.0,
+          SizedBox(
+            width: getProportionateScreenWidth(20.0),
           ),
           Column(
             children: [
               Container(
-                width: 270,
+                width: getProportionateScreenWidth(270.0),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  data['time'],
+                  diffText,
                   style: TextStyle(
                     color: data['status'] == 1
                         ? Color(0xff383838)
@@ -70,11 +94,12 @@ class ActivityItem extends StatelessWidget {
                 // Adobe XD layer: 'Few seconds ago' (text)
               ),
               Container(
-                width: 270,
-                padding: EdgeInsets.fromLTRB(0, 31, 0, 0),
+                width: getProportionateScreenWidth(270.0),
+                padding: EdgeInsets.fromLTRB(
+                    0, getProportionateScreenWidth(31.0), 0, 0),
                 child: Container(
-                  width: 271,
-                  height: 71,
+                  width: getProportionateScreenWidth(271.0),
+                  height: getProportionateScreenWidth(71.0),
                   decoration: BoxDecoration(
                     color: color != null ? Color(color) : kBackgroundColor,
                     borderRadius: BorderRadius.all(
@@ -99,8 +124,8 @@ class ActivityItem extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            width: 50,
-                            height: 50,
+                            width: getProportionateScreenWidth(50.0),
+                            height: getProportionateScreenWidth(50.0),
                             decoration: BoxDecoration(
                               color: (length > 4 && k == 3)
                                   ? Color(0xffFF629F)
