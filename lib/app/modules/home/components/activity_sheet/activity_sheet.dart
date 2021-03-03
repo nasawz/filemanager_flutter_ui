@@ -8,7 +8,7 @@ import 'package:filemanager/app/modules/activity/components/activity_item/activi
 final data = [
   {
     'status': 1,
-    'time': 'Few seconds ago',
+    'time': '2021-03-03 15:34:30',
     'bitmaps': [
       'assets/images/Bitmap1.png',
       'assets/images/Bitmap2.png',
@@ -18,7 +18,7 @@ final data = [
   },
   {
     'status': 1,
-    'time': '20 minutes ago',
+    'time': '2021-03-03 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap1.png',
       'assets/images/Bitmap2.png',
@@ -28,7 +28,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '2 hours ago',
+    'time': '2021-02-27 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap1.png',
       'assets/images/Bitmap2.png',
@@ -41,7 +41,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '4 hours ago',
+    'time': '2021-01-30 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap4.png',
       'assets/images/Bitmap2.png',
@@ -51,7 +51,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '6 hours ago',
+    'time': '2020-04-30 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap2.png',
       'assets/images/Bitmap5.png',
@@ -61,7 +61,7 @@ final data = [
   },
   {
     'status': 0,
-    'time': '8 hours ago',
+    'time': '2019-04-30 10:30:30',
     'bitmaps': [
       'assets/images/Bitmap5.png',
       'assets/images/Bitmap6.png',

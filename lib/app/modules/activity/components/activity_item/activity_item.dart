@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
+import 'package:day/day.dart';
 
 import 'package:filemanager/app/components/dashed_line/dashed_line.dart';
 
 // ignore: must_be_immutable
 class ActivityItem extends StatelessWidget {
   Map data;
+  Map diffTime = {};
   List bitmaps;
   int length;
   int color;
@@ -14,6 +16,27 @@ class ActivityItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get diff
+    final now = Day();
+    final createTime = Day.fromString(data['time']);
+    diffTime["year"] = now.diff(createTime, 'y');
+    diffTime["month"] = now.diff(createTime, 'M');
+    diffTime["day"] = now.diff(createTime, 'd');
+    diffTime["hour"] = now.diff(createTime, 'h');
+    diffTime["minute"] = now.diff(createTime, 'm');
+    diffTime["second"] = now.diff(createTime, 's');
+    String diffText = diffTime["year"] != 0
+        ? "${diffTime["year"].toString()} year ago"
+        : diffTime["month"] != 0
+            ? "${diffTime["month"].toString()} month ago"
+            : diffTime["day"] != 0
+                ? "${diffTime["day"].toString()} day ago"
+                : diffTime["hour"] != 0
+                    ? "${diffTime["hour"].toString()} hour ago"
+                    : diffTime["minute"] != 0
+                        ? "${diffTime["minute"].toString()} minute ago"
+                        : "Few second ago";
+
     length = data['bitmaps'].length;
     bitmaps = data['bitmaps'].map((element) => element).toList();
     if (data['bitmaps'].length > 4) {
@@ -58,7 +81,7 @@ class ActivityItem extends StatelessWidget {
                 width: getProportionateScreenWidth(270.0),
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  data['time'],
+                  diffText,
                   style: TextStyle(
                     color: data['status'] == 1
                         ? Color(0xff383838)
