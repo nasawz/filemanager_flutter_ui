@@ -20,7 +20,6 @@ class HomeView extends GetView<HomeController> {
       //   title: Text('HomeView'),
       //   centerTitle: true,
       // ),
-
       floatingActionButton: FloatButton(),
       floatingActionButtonLocation: CustomFloatingActionButtonLocation(
           FloatingActionButtonLocation.endFloat, 0, -90),
@@ -41,7 +40,7 @@ class HomeView extends GetView<HomeController> {
                     children: [
                       Text('Hi,Sara',
                           style: TextStyle(
-                            fontFamily: 'SFProDisplay-Semibold',
+                            fontFamily: 'SFProDisplay',
                             fontSize: kHeroFontSize,
                             fontWeight: FontWeight.w700,
                             color: const Color(0xff383838),
@@ -71,10 +70,8 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: Container(
-                  child: SizedBox(
-                    height: kDefaultPadding / 2,
-                  ),
+                child: SizedBox(
+                  height: kDefaultPadding / 2,
                 ),
               ),
               SliverToBoxAdapter(
@@ -84,10 +81,8 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: Container(
-                  child: SizedBox(
-                    height: kDefaultPadding / 2,
-                  ),
+                child: SizedBox(
+                  height: kDefaultPadding / 2,
                 ),
               ),
               SliverToBoxAdapter(
