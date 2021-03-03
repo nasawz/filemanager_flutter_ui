@@ -177,6 +177,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.10.0-nullsafety.1"
+  statusbar:
+    dependency: "direct main"
+    description:
+      name: statusbar
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.0"
   stream_channel:
     dependency: transitive
     description:

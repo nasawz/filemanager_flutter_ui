@@ -12,7 +12,7 @@ void main() {
       title: "Application",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
-      theme: ThemeData(scaffoldBackgroundColor: kBackgroundColor),
+      theme: ThemeData(scaffoldBackgroundColor: kSecondaryColor),
     ),
   );
 }
