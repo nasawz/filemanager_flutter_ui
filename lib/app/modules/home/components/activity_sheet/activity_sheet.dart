@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:filemanager/app/modules/activity/views/activity_item.dart';
+import 'package:filemanager/app/modules/activity/components/activity_item/activity_item.dart';
 
 final data = [
   {

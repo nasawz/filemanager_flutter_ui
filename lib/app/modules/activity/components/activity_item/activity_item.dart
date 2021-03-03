@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 
-import './dashed_line.dart';
+import 'package:filemanager/app/components/dashed_line/dashed_line.dart';
 
 // ignore: must_be_immutable
 class ActivityItem extends StatelessWidget {

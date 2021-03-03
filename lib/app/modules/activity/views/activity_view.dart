@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../controllers/activity_controller.dart';
-import './activity_item.dart';
+import 'package:filemanager/app/modules/activity/components/activity_item/activity_item.dart';
 import 'package:filemanager/util.dart';
 
 final data = [
