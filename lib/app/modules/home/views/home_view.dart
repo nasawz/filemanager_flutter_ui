@@ -32,7 +32,6 @@ class HomeView extends GetView<HomeController> {
               SliverToBoxAdapter(
                 child: Container(
                   height: 60,
-                  color: kBackgroundColor,
                   width: double.infinity,
                   padding: EdgeInsets.only(
                       left: getProportionateScreenWidth(kDefaultPadding),
@@ -73,7 +72,6 @@ class HomeView extends GetView<HomeController> {
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  color: kBackgroundColor,
                   child: SizedBox(
                     height: kDefaultPadding / 2,
                   ),
@@ -81,14 +79,12 @@ class HomeView extends GetView<HomeController> {
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  color: kBackgroundColor,
                   padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   child: SearchBar(),
                 ),
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  color: kBackgroundColor,
                   child: SizedBox(
                     height: kDefaultPadding / 2,
                   ),
