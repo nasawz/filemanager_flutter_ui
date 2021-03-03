@@ -13,7 +13,12 @@ class FileList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.all(kDefaultPadding),
+      padding: EdgeInsets.only(
+          top: kDefaultPadding * 1.8,
+          left: kDefaultPadding,
+          right: kDefaultPadding,
+          bottom: kDefaultPadding),
+      // padding: EdgeInsets.all(kDefaultPadding),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: 4,
         itemCount: 18,
