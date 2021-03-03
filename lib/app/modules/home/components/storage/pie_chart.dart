@@ -28,8 +28,8 @@ class PieChartStorageState extends State {
           borderData: FlBorderData(
             show: false,
           ),
-          sectionsSpace: 0,
-          centerSpaceRadius: 30,
+          sectionsSpace: 5,
+          centerSpaceRadius: 20,
           sections: showingSections()),
     );
   }
@@ -38,7 +38,7 @@ class PieChartStorageState extends State {
     return List.generate(2, (i) {
       final isTouched = i == touchedIndex;
       final double fontSize = isTouched ? 25 : 16;
-      final double radius = isTouched ? 40 : 30;
+      final double radius = isTouched ? 50 : 40;
       switch (i) {
         case 0:
           return PieChartSectionData(
