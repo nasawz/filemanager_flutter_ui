@@ -1,5 +1,5 @@
-import 'package:filemanager/app/components/storage/left_card.dart';
-import 'package:filemanager/app/components/storage/right_card.dart';
+import 'package:filemanager/app/modules/home/components/storage/left_card.dart';
+import 'package:filemanager/app/modules/home/components/storage/right_card.dart';
 import 'package:flutter/material.dart';
 
 class Storage extends StatelessWidget {

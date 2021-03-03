@@ -4,7 +4,7 @@ import 'package:filemanager/app/modules/home/components/activity_sheet/activity_
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
 import 'package:filemanager/app/components/search_bar/search_bar.dart';
 import 'package:filemanager/app/components/float_button/float_button.dart';
-import 'package:filemanager/app/components/storage/storage.dart';
+import 'package:filemanager/app/modules/home/components/storage/storage.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
