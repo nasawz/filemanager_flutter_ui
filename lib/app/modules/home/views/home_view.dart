@@ -9,7 +9,7 @@ import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'dart:math' as math;
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {

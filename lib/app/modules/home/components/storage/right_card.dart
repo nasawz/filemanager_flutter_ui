@@ -10,35 +10,32 @@ class RightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 0,
-      right: 0,
-      // left: getProportionateScreenWidth(268),
-      child: Container(
-        width: getProportionateScreenWidth(48),
-        height: getProportionateScreenHeight(108),
-        decoration: BoxDecoration(
-            color: Color(0xffFF629F),
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(5), bottomRight: Radius.circular(5))),
-        child: Transform.translate(
-          offset: Offset(getProportionateScreenWidth(48), 0),
-          child: Transform.rotate(
-            angle: -90.0 * math.pi / 180,
-            child: OverflowBox(
-              alignment: Alignment.center,
-              maxWidth: getProportionateScreenWidth((48 + 20).toDouble()),
-              maxHeight: getProportionateScreenHeight(108),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 4),
-                child: Text(
-                  'Storage',
-                  style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "SF Pro Display"),
-                ),
+    return Container(
+      width: getProportionateScreenWidth(43),
+      height: getProportionateScreenHeight(108),
+      decoration: BoxDecoration(
+          color: Color(0xffFF629F),
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(12),
+            bottomRight: Radius.circular(12),
+          )),
+      child: Transform.translate(
+        offset: Offset(getProportionateScreenWidth(48), 0),
+        child: Transform.rotate(
+          angle: -90.0 * math.pi / 180,
+          child: OverflowBox(
+            alignment: Alignment.center,
+            maxWidth: getProportionateScreenWidth((48 + 20).toDouble()),
+            maxHeight: getProportionateScreenHeight(108),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding / 4),
+              child: Text(
+                'Storage',
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "SF Pro Display"),
               ),
             ),
           ),
