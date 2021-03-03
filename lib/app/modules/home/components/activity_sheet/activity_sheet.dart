@@ -3,6 +3,73 @@ import 'dart:ui';
 import 'package:filemanager/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:filemanager/app/modules/activity/views/activity_item.dart';
+
+final data = [
+  {
+    'status': 1,
+    'time': 'Few seconds ago',
+    'bitmaps': [
+      'assets/images/Bitmap1.png',
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap3.png',
+      'assets/images/Bitmap4.png'
+    ]
+  },
+  {
+    'status': 1,
+    'time': '20 minutes ago',
+    'bitmaps': [
+      'assets/images/Bitmap1.png',
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap3.png',
+      'assets/images/Bitmap4.png'
+    ]
+  },
+  {
+    'status': 0,
+    'time': '2 hours ago',
+    'bitmaps': [
+      'assets/images/Bitmap1.png',
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap3.png',
+      'assets/images/Bitmap4.png',
+      'assets/images/Bitmap1.png',
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap3.png',
+    ]
+  },
+  {
+    'status': 0,
+    'time': '4 hours ago',
+    'bitmaps': [
+      'assets/images/Bitmap4.png',
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap3.png',
+      'assets/images/Bitmap1.png'
+    ]
+  },
+  {
+    'status': 0,
+    'time': '6 hours ago',
+    'bitmaps': [
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap5.png',
+      'assets/images/Bitmap6.png',
+      'assets/images/Bitmap4.png'
+    ]
+  },
+  {
+    'status': 0,
+    'time': '8 hours ago',
+    'bitmaps': [
+      'assets/images/Bitmap5.png',
+      'assets/images/Bitmap6.png',
+      'assets/images/Bitmap4.png',
+      'assets/images/Bitmap1.png'
+    ]
+  }
+];
 
 class ActivitySheet extends StatelessWidget {
   const ActivitySheet({
@@ -49,40 +116,12 @@ class ActivitySheet extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: kDefaultPadding / 2,
-                      ),
                       Container(
-                        height: 150.0,
-                        color: Colors.deepOrangeAccent,
-                        child: Center(
-                          child: Text(
-                            'Container 1',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 150.0,
-                        color: Colors.orangeAccent,
-                        child: Center(
-                          child: Text(
-                            'Container 2',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 150.0,
-                        color: Colors.indigoAccent,
-                        child: Center(
-                          child: Text(
-                            'Container 3',
-                          ),
+                        margin: EdgeInsets.only(top: kDefaultPadding),
+                        child: Column(
+                          children: data
+                              .map((item) => ActivityItem(item, 0xffF2E9E9))
+                              .toList(),
                         ),
                       ),
                     ],
