@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:filemanager/app/modules/home/components/activity_sheet/activity_sheet.dart';
 import 'package:filemanager/app/modules/home/components/file_list/file_list.dart';
-import 'package:filemanager/app/modules/home/views/search_bar.dart';
+import 'package:filemanager/app/components/search_bar/search_bar.dart';
 import 'package:filemanager/app/components/float_button/float_button.dart';
+import 'package:filemanager/app/modules/home/components/storage/storage.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -89,8 +89,11 @@ class HomeView extends GetView<HomeController> {
                 child: Container(
                   height: 184,
                   width: double.infinity,
-                  decoration: BoxDecoration(color: Colors.red),
-                  child: Text('storage'),
+                  // decoration: BoxDecoration(color: Colors.red),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding,
+                      vertical: kDefaultPadding / 2),
+                  child: Storage(),
                 ),
               ),
               FileList()
