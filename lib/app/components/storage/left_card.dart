@@ -1,4 +1,4 @@
-import 'package:filemanager/app/components/pie_chart.dart';
+import 'package:filemanager/app/components/storage/pie_chart.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
