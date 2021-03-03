@@ -10,8 +10,8 @@ class LeftCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: getProportionateScreenWidth(284),
+    return Expanded(
+      child: Container(
         height: getProportionateScreenHeight(152),
         decoration: BoxDecoration(
             color: Colors.white,
@@ -19,20 +19,21 @@ class LeftCard extends StatelessWidget {
                 topRight: Radius.circular(20),
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20))),
-        child: Container(
-          padding: EdgeInsets.only(right: kDefaultPadding),
-          child: Row(
-            children: [
-              Container(
-                height: 150,
-                width: 150,
-                child: PieChartSample2(),
-              ),
-              Spacer(),
-              TotalStorage()
-            ],
-          ),
-        ));
+        child: Center(
+            child: Row(
+          children: [
+            Container(
+              // color: Colors.green,
+              height: getProportionateScreenHeight(152),
+              width: getProportionateScreenWidth(152),
+              child: PieChartStorage(),
+            ),
+            // Spacer(),
+            TotalStorage()
+          ],
+        )),
+      ),
+    );
   }
 }
 
@@ -44,7 +45,8 @@ class TotalStorage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: kDefaultPadding),
+      // color: Colors.red,
+      padding: EdgeInsets.only(left: kDefaultPadding / 2),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,

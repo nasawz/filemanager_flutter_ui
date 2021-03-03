@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 // import 'indicator.dart';
 
-class PieChartSample2 extends StatefulWidget {
+class PieChartStorage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => PieChart2State();
+  State<StatefulWidget> createState() => PieChartStorageState();
 }
 
-class PieChart2State extends State {
+class PieChartStorageState extends State {
   int touchedIndex;
 
   @override
