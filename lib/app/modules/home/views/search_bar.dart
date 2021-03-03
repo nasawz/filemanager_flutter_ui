@@ -36,7 +36,8 @@ class SearchBar extends StatelessWidget {
           //   color: Color(0xff383F4B),
           // )
           prefixIcon: Container(
-            padding: EdgeInsets.all(kDefaultPadding / 1.9),
+            // color: Colors.red,
+            padding: EdgeInsets.all(kDefaultPadding / 1.6),
             child: new SvgPicture.asset(
               "assets/icons/search.svg",
               fit: BoxFit.cover,
