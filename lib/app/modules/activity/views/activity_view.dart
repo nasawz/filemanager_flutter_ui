@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import '../controllers/activity_controller.dart';
 import './activity_item.dart';
+import 'package:filemanager/util.dart';
 
 final data = [
   {
@@ -108,11 +109,11 @@ class ActivityView extends GetView<ActivityController> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          height: 60,
+                          height: getProportionateScreenWidth(60),
                           alignment: Alignment.center,
                           child: Container(
-                            width: 40,
-                            height: 5,
+                            width: getProportionateScreenWidth(40),
+                            height: getProportionateScreenWidth(5),
                             decoration: BoxDecoration(
                               color: Colors.grey[200],
                               borderRadius: BorderRadius.all(
@@ -122,9 +123,10 @@ class ActivityView extends GetView<ActivityController> {
                           ),
                         ),
                         Container(
-                          height: 40,
-                          width: 240,
-                          margin: EdgeInsets.fromLTRB(0, 0, 0, 40),
+                          height: getProportionateScreenWidth(40),
+                          width: getProportionateScreenWidth(240),
+                          margin: EdgeInsets.fromLTRB(
+                              0, 0, 0, getProportionateScreenWidth(40)),
                           alignment: Alignment.centerLeft,
                           child: Text(
                             'Last Activity',
@@ -137,9 +139,8 @@ class ActivityView extends GetView<ActivityController> {
                           ),
                         ),
                         Column(
-                          children: data
-                              .map((item) => ActivityItem(item, 0xffF2E9E9))
-                              .toList(),
+                          children:
+                              data.map((item) => ActivityItem(item)).toList(),
                         ),
                       ],
                     ),

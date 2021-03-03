@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:filemanager/constant.dart';
+import 'package:filemanager/util.dart';
 
 import './dashed_line.dart';
 
@@ -20,15 +21,15 @@ class ActivityItem extends StatelessWidget {
       bitmaps.add('assets/images/header_image.jpeg');
     }
     return Container(
-      width: 314.0,
-      height: 170.0,
+      width: getProportionateScreenWidth(314.0),
+      height: getProportionateScreenWidth(170.0),
       child: Row(
         children: [
           Column(
             children: [
               Container(
-                width: 22.0,
-                height: 22.0,
+                width: getProportionateScreenWidth(22.0),
+                height: getProportionateScreenWidth(22.0),
                 decoration: BoxDecoration(
                   color: data['status'] == 1
                       ? Color(0xff383838)
@@ -37,8 +38,8 @@ class ActivityItem extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 22.0,
-                height: 148.0,
+                width: getProportionateScreenWidth(22.0),
+                height: getProportionateScreenWidth(148.0),
                 child: CYDashedLine(
                   axis: Axis.vertical,
                   height: 8,
@@ -48,13 +49,13 @@ class ActivityItem extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            width: 20.0,
+          SizedBox(
+            width: getProportionateScreenWidth(20.0),
           ),
           Column(
             children: [
               Container(
-                width: 270,
+                width: getProportionateScreenWidth(270.0),
                 alignment: Alignment.centerLeft,
                 child: Text(
                   data['time'],
@@ -70,11 +71,12 @@ class ActivityItem extends StatelessWidget {
                 // Adobe XD layer: 'Few seconds ago' (text)
               ),
               Container(
-                width: 270,
-                padding: EdgeInsets.fromLTRB(0, 31, 0, 0),
+                width: getProportionateScreenWidth(270.0),
+                padding: EdgeInsets.fromLTRB(
+                    0, getProportionateScreenWidth(31.0), 0, 0),
                 child: Container(
-                  width: 271,
-                  height: 71,
+                  width: getProportionateScreenWidth(271.0),
+                  height: getProportionateScreenWidth(71.0),
                   decoration: BoxDecoration(
                     color: color != null ? Color(color) : kBackgroundColor,
                     borderRadius: BorderRadius.all(
@@ -99,8 +101,8 @@ class ActivityItem extends StatelessWidget {
                                 fontSize: 16,
                               ),
                             ),
-                            width: 50,
-                            height: 50,
+                            width: getProportionateScreenWidth(50.0),
+                            height: getProportionateScreenWidth(50.0),
                             decoration: BoxDecoration(
                               color: (length > 4 && k == 3)
                                   ? Color(0xffFF629F)
