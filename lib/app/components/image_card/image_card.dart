@@ -15,7 +15,7 @@ class ImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14.0),
+          borderRadius: BorderRadius.all(Radius.circular(14.0)),
           color: const Color(0xffffffff),
           boxShadow: [
             BoxShadow(
@@ -26,11 +26,15 @@ class ImageCard extends StatelessWidget {
           ],
         ),
         height: height,
+        width: 145.0,
         child: Column(
           children: [
             Container(
                 height: 109.0,
                 decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(14.0),
+                        topRight: Radius.circular(14.0)),
                     image: DecorationImage(
                         image: AssetImage(path), fit: BoxFit.cover))),
             Expanded(
@@ -63,27 +67,26 @@ class ImageCard extends StatelessWidget {
                                 ))
                           ])),
                       Container(
-                        child: Transform.translate(
-                            offset: Offset(8.0, -8.0),
-                            child: PopupMenuButton(
-                              padding: EdgeInsets.all(0),
-                              elevation: 0,
-                              icon: Icon(Icons.more_vert),
-                              itemBuilder: (context) {
-                                return <PopupMenuEntry<String>>[
-                                  PopupMenuItem<String>(
-                                      value: "favorites", child: Text('收藏')),
-                                  PopupMenuItem<String>(
-                                      value: "shield", child: Text('屏蔽')),
-                                  PopupMenuItem<String>(
-                                      value: "report", child: Text('举报')),
-                                  PopupMenuItem<String>(
-                                      value: "not interested",
-                                      child: Text('不感兴趣')),
-                                ];
-                              },
-                            )),
-                      ),
+                          width: 15.0,
+                          height: 20.0,
+                          child: PopupMenuButton(
+                            padding: EdgeInsets.all(0),
+                            elevation: 0,
+                            icon: Icon(Icons.more_vert),
+                            itemBuilder: (context) {
+                              return <PopupMenuEntry<String>>[
+                                PopupMenuItem<String>(
+                                    value: "favorites", child: Text('收藏')),
+                                PopupMenuItem<String>(
+                                    value: "shield", child: Text('屏蔽')),
+                                PopupMenuItem<String>(
+                                    value: "report", child: Text('举报')),
+                                PopupMenuItem<String>(
+                                    value: "not interested",
+                                    child: Text('不感兴趣')),
+                              ];
+                            },
+                          )),
                     ]),
               ),
             ),
