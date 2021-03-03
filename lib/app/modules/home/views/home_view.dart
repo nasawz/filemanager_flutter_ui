@@ -13,18 +13,9 @@ import '../controllers/home_controller.dart';
 import 'package:statusbar/statusbar.dart';
 
 class HomeView extends GetView<HomeController> {
-  // Future<void> Test() async {
-  //   await FlutterStatusbarcolor.setStatusBarColor(Colors.green[400]);
-  //   if (useWhiteForeground(Colors.green[400])) {
-  //     FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
-  //   } else {
-  //     FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
-    // StatusBar.color(kBackgroundColor);
+    StatusBar.color(kBackgroundColor);
     return Scaffold(
       // appBar: AppBar(
       //   title: Text('HomeView'),
