@@ -6,11 +6,19 @@ import './dashed_line.dart';
 // ignore: must_be_immutable
 class ActivityItem extends StatelessWidget {
   Map data;
+  int bitmaps;
   int color;
   ActivityItem(this.data, [this.color]);
 
   @override
   Widget build(BuildContext context) {
+    bitmaps = data['bitmaps'].length;
+    if (data['bitmaps'].length > 4) {
+      data['bitmaps'].removeRange(3, data['bitmaps'].length);
+      data['bitmaps'].add('assets/images/header_image.jpg');
+      // print(data['bitmaps']);
+    }
+    // print(bitmaps);
     return Container(
       width: 314.0,
       height: 170.0,
@@ -51,6 +59,9 @@ class ActivityItem extends StatelessWidget {
                 child: Text(
                   data['time'],
                   style: TextStyle(
+                    color: data['status'] == 1
+                        ? Color(0xff383838)
+                        : Color(0xffcccccc),
                     fontFamily: 'SFProText-Medium',
                     fontSize: 18,
                   ),
@@ -72,61 +83,79 @@ class ActivityItem extends StatelessWidget {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/Bitmap1.png'),
-                            fit: BoxFit.cover,
+                    children: data['bitmaps']
+                        .map<Widget>(
+                          (item) => Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(item),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                            ),
                           ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/Bitmap2.png'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/Bitmap3.png'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/Bitmap4.png'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                      ),
-                    ],
+                        )
+                        .toList(),
+                    // children: [
+                    //   Container(
+                    //     width: 50,
+                    //     height: 50,
+                    //     decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //         image: AssetImage('assets/images/Bitmap2.png'),
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //       borderRadius: BorderRadius.all(
+                    //         Radius.circular(10),
+                    //       ),
+                    //     ),
+                    //   ),
+                    //   Container(
+                    //     width: 50,
+                    //     height: 50,
+                    //     decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //         image: AssetImage('assets/images/Bitmap3.png'),
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //       borderRadius: BorderRadius.all(
+                    //         Radius.circular(10),
+                    //       ),
+                    //     ),
+                    //   ),
+                    //   Container(
+                    //     width: 50,
+                    //     height: 50,
+                    //     decoration: BoxDecoration(
+                    //       color: Colors.grey,
+                    //       image: DecorationImage(
+                    //         image: AssetImage('assets/images/Bitmap4.png'),
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //       borderRadius: BorderRadius.all(
+                    //         Radius.circular(10),
+                    //       ),
+                    //     ),
+                    //   ),
+                    //   Container(
+                    //     width: 50,
+                    //     height: 50,
+                    //     decoration: BoxDecoration(
+                    //       color: Colors.grey,
+                    //       image: DecorationImage(
+                    //         image: AssetImage('assets/images/Bitmap4.png'),
+                    //         fit: BoxFit.cover,
+                    //       ),
+                    //       borderRadius: BorderRadius.all(
+                    //         Radius.circular(10),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ],
                   ),
                 ),
               ),

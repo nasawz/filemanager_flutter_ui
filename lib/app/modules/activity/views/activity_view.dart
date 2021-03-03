@@ -11,6 +11,12 @@ final data = [
   {
     'status': 1,
     'time': 'Few seconds ago',
+    'bitmaps': [
+      'assets/images/Bitmap1.png',
+      'assets/images/Bitmap2.png',
+      'assets/images/Bitmap3.png',
+      'assets/images/Bitmap4.png'
+    ]
   },
   {
     'status': 1,
