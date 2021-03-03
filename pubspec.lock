@@ -57,6 +57,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.0"
+  day:
+    dependency: "direct main"
+    description:
+      name: day
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.4"
   equatable:
     dependency: transitive
     description:
