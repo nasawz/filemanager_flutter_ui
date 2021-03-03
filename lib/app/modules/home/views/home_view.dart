@@ -40,7 +40,7 @@ class HomeView extends GetView<HomeController> {
                     children: [
                       Text('Hi,Sara',
                           style: TextStyle(
-                            fontFamily: 'SFProDisplay-Semibold',
+                            fontFamily: 'SFProDisplay',
                             fontSize: kHeroFontSize,
                             fontWeight: FontWeight.w700,
                             color: const Color(0xff383838),
