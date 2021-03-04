@@ -8,6 +8,7 @@ import 'package:filemanager/app/modules/home/components/storage/storage.dart';
 import 'package:filemanager/constant.dart';
 import 'package:filemanager/util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_group_sliver/flutter_group_sliver.dart';
 import 'package:get/get.dart';
 import 'dart:math' as math;
 import '../controllers/home_controller.dart';
@@ -75,7 +76,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SliverToBoxAdapter(
-                child: Padding(
+                child: Container(
                   padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   child: SearchBar(),
                 ),
@@ -87,16 +88,32 @@ class HomeView extends GetView<HomeController> {
               ),
               SliverToBoxAdapter(
                 child: Container(
-                  height: 184,
-                  width: double.infinity,
-                  // decoration: BoxDecoration(color: Colors.red),
-                  padding: EdgeInsets.symmetric(
-                      horizontal: kDefaultPadding,
-                      vertical: kDefaultPadding / 2),
-                  child: Storage(),
+                  color: kSecondaryColor,
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    // decoration: BoxDecoration(color: Colors.red),
+                    padding: EdgeInsets.only(
+                        left: kDefaultPadding,
+                        right: kDefaultPadding,
+                        top: kDefaultPadding / 2,
+                        bottom: kDefaultPadding / 2 + 16),
+                    decoration: BoxDecoration(
+                        // color: Colors.green,
+                        color: kBackgroundColor,
+                        borderRadius:
+                            BorderRadius.only(bottomLeft: Radius.circular(50))),
+                    child: Storage(),
+                  ),
                 ),
               ),
-              FileList()
+              SliverGroupBuilder(
+                decoration: BoxDecoration(
+                    color: kSecondaryColor,
+                    borderRadius:
+                        BorderRadius.only(topRight: Radius.circular(40))),
+                child: FileList(),
+              ),
             ],
           ),
           ActivitySheet(),
